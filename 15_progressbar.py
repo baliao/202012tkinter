@@ -17,7 +17,7 @@ win.geometry('500x200')
 def show(event):
     pb.start()
 
-#mode determinate or indeterminate 从左到右,左右来回!
+#mode determinate or indeterminate 从左到右,左右来回...
 v = tkinter.IntVar()
 pb = Progressbar(win,length=100,mode='indeterminate',orient=tkinter.HORIZONTAL,variable=v)
 pb.pack()

@@ -9,7 +9,7 @@ from tkinter.messagebox import *
 class Application_ui(Frame):
 
     # 这个类仅实现界面生成功能，具体事件处理代码在子类Application中。
-    def init(self, master=None):
+    def __init__(self, master=None):
         Frame.__init__(self, master)
         self.master.title('海港高桩码头结构安全评估及预警平台')
         self.master.geometry('808x447')
@@ -31,7 +31,7 @@ class Application_ui(Frame):
         self.Choose_project = Menu(self.Sysmenu, tearoff=0)
         self.Sysmenu.add_cascade(menu=self.Choose_project, label='选择工程')
         self.Choose_project.add_command(label='天津港南疆27#通用码头工程', command=self.My_project_Cmd)
-        self.Choose_project.add_command(label='其它', state='disabled', command=self.Other_project_Cmd)
+        self.Choose_project.add_command(label='其它', state='active', command=self.Other_project_Cmd)
 
         self.Sysmenu.add_command(label='返回主界面', accelerator='Ctrl-B', command=self.Return_mainform_Cmd)
         self.top.bind_all('<Control-B>', self.Return_mainform_Cmd)
@@ -43,7 +43,7 @@ class Application_ui(Frame):
         # 安全评估
 
         self.Safe_assess = Menu(self.MainMenu, tearoff=0)
-        self.MainMenu.add_cascade(menu=self.Safe_assess, label='安全评估[A]', state='disabled', underline=5)
+        self.MainMenu.add_cascade(menu=self.Safe_assess, label='安全评估[A]', state='active', underline=5)
 
         self.Safe_assess.add_command(label='码头结构示意图', accelerator='Ctrl-P', command=self.Show_picture_Cmd)
         self.top.bind_all('<Control-P>', self.Show_picture_Cmd)
@@ -54,7 +54,7 @@ class Application_ui(Frame):
         self.top.bind_all('<Control-m>', self.My_assess_Cmd)
         #预警系统
         self.Warn_sys = Menu(self.MainMenu, tearoff=0)
-        self.MainMenu.add_cascade(menu=self.Warn_sys, label='预警系统[W]', state='disabled', underline=5)
+        self.MainMenu.add_cascade(menu=self.Warn_sys, label='预警系统[W]', state='active', underline=5)
 
         self.Warn_sys.add_command(label='码头结构安全预警', accelerator='Ctrl-J', command=self.Warn_wharf_Cmd)
         self.top.bind_all('<Control-J>', self.Warn_wharf_Cmd)

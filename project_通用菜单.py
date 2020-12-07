@@ -11,7 +11,7 @@ class Window():
     def __set_window(self):
         self.__window.geometry("700x500")
         self.__window.minsize(500, 200)
-        self.__window.title("Some Text")
+        self.__window.title("Some Test")
         self.__window.iconbitmap("icon.ico")
 
     def start_window(self):
@@ -35,5 +35,6 @@ class Window():
         self.__window.mainloop()
 
 a=Window()
+
 
 a.run()
